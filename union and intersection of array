@@ -1,0 +1,115 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    // declaration of array 
+    // take input 
+     // first array    
+    cout<<"enter the value of n";
+    int n1;
+    cin>>n1;
+    int a[n1];
+    //taking values in array
+    for(int i=0;i<n1;i++)
+    {
+        cout<<"enter value array 1";
+        cin>>a[i];
+        cout<<endl;
+    }
+    // second array 
+    
+    int n2;
+    cin>>n2;
+    int b[n2];
+    //taking values in array
+    for(int i=0;i<n2;i++)
+    {
+        cout<<"enter value of array 2 ";
+        cin>>b[i];
+        cout<<endl;
+    }
+    
+    
+    
+    
+    // printing array 1
+    cout<<endl;
+    cout<<"array1 ";
+    for(int i=0;i<n1;i++)
+    {
+    cout<<a[i]<<" ";    
+        }
+    // printing array 2
+    cout<<endl;
+    cout<<"array2 ";
+    
+    for(int i=0;i<n2;i++)
+    {
+    cout<<b[i]<<" ";    
+        }
+    int hash[1000];
+    
+    //finding max1
+    int max1=INT_MIN;
+    
+    for(int i=0;i<n1;i++)
+    {
+    hash[a[i]]++;
+    if(max1<a[i])
+    {
+        max1=a[i];
+    }
+    
+    }
+    
+    //finding max2
+    int max2=INT_MIN;
+    
+    for(int i=0;i<n2;i++)
+    {
+        hash[b[i]]++;
+    if(max2<b[i])
+    {
+        max2=b[i];
+    }    
+        
+    }
+    int limit=max(max1,max2);    
+    vector<int> un;
+    vector<int> inter;
+    
+    for(int i=0;i<=limit;i++)
+    {
+        if(hash[i]==2)
+        {
+            inter.push_back(i);
+            un.push_back(i);
+        }
+        if(hash[i]==1)
+        {
+            un.push_back(i);
+        }
+        else
+        continue;
+        
+    }
+
+    // printing intersectiom
+    cout<<endl;
+    cout<<"intersectiom ";
+    for(int i=0;i<inter.size();i++)
+    {
+        cout<<"intersection"<<inter[i]<<" ";
+    }
+    
+    // printing intersection
+    cout<<endl;
+    cout<<"union ";
+    for(int i=0;i<un.size();i++)
+    {
+        cout<<"union"<<un[i]<<" ";
+    }
+     
+    return 0;
+}
