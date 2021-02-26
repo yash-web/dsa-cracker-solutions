@@ -1,0 +1,46 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    // declaration of array 
+    // take input 
+    cout<<"enter the value of n";
+    int n;
+    
+    cin>>n;
+    int a[n];
+    
+    //taking values in array
+    for(int i=0;i<n;i++)
+    {
+        cout<<"enter value ";
+        cin>>a[i];
+        cout<<endl;
+    }
+    // printing array 
+    
+    for(int i=0;i<n;i++)
+    {
+    cout<<a[i]<<" ";    
+        }
+    
+    // reversing the array 
+    
+    for(int i=0;i<(n/2);i++)
+    {
+    int temp=a[i];
+    a[i]=a[n-1-i];
+    a[n-1-i]=temp;
+        
+    }
+    // printing array 
+    
+    for(int i=0;i<n;i++)
+    {
+    cout<<a[i]<<" ";    
+        
+    }
+     
+    return 0;
+}
