@@ -1,0 +1,32 @@
+class Solution{
+    public:
+    // arr: input array
+    // n: size of array
+    //Function to find the sum of contiguous subarray with maximum sum.
+    int maxSubarraySum(int arr[], int n){
+    int max_so_far=0;
+    int max_till_yet=arr[0];
+    
+    for(int i=0;i<n;i++)
+    {
+  //  cout<<max_so_far<<" "<<max_till_yet;
+//    cout<<endl;
+    max_so_far= max_so_far+arr[i];     
+    
+    if(max_till_yet<=max_so_far)
+    {
+    max_till_yet=max(max_till_yet,max_so_far)    ;
+    }
+    if(max_so_far<0)
+    {
+        max_so_far=0;
+    }
+        
+    
+    }
+    
+    
+    
+    return max_till_yet;    
+    }
+};
